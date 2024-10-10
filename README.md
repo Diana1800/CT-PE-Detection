@@ -42,8 +42,8 @@ Each branch of the Siamese Network is a custom Convolutional Neural Network (CNN
 
 ### Results 📊
 
-    EfficientNet: F1 score of 80% on the validation set for lung detection.
-    Siamese Network: TBD after final training and testing.
+EfficientNet: F1 score of 80% on the validation set for lung detection.
+Siamese Network: TBD after final training and testing.
 
 
 ### Credits 🙌
