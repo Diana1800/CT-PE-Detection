@@ -52,7 +52,7 @@ Training Procedure
 
     The EfficientNet model is first trained to classify CT images as lung or non-lung.
     After achieving a satisfactory F1 score, the top 20 images per patient are passed to the Siamese Network.
-    The Siamese Network is trained to determine whether the image pairs indicate a sick or healthy condition.
+    The Siamese Network is trained to determine whether the image indicate a sick or healthy condition.
 
 Results
 
