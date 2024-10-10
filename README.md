@@ -17,7 +17,7 @@ The dataset used for this project was obtained from the Kaggle repository RSNA S
 
 Please note that all the images used in this project are from this pre-processed dataset. Make sure to credit the original dataset when using this data.
 
-Model Architecture 🏗️
+### Model Architecture 🏗️
 
 ![MODEL BY MERMAID](https://github.com/user-attachments/assets/b9e15740-5747-4551-aa54-4064b2f7b805)
 
@@ -35,22 +35,22 @@ Stage 2: Siamese Network
     The branches process images separately and then concatenate their features for further analysis.
     The Siamese Network is trained to determine whether the image indicate a sick or healthy condition.
 
-Results 📊
+### Results 📊
 
     EfficientNet: F1 score of 80% on the validation set for lung detection.
     Siamese Network: TBD after final training and testing.
 
 
-Credits 🙌
+### Credits 🙌
 
 The dataset used in this project is sourced from the RSNA STR Pulmonary Embolism Detection dataset. For this project, the original DICOM (DCM) files were modified and converted to JPEG format at 256x256 pixels by Ian Pan. Full credit for the original data goes to the original authors.
 https://www.kaggle.com/competitions/rsna-str-pulmonary-embolism-detection
 https://www.kaggle.com/datasets/vaillant/rsna-str-pe-detection-jpeg-256
 
-Contributing ✨
+### Contributing ✨
 
 If you'd like to contribute to this project, please feel free to submit a pull request.
 
-License 📜
+### License 📜
 
 The dataset used in this project is licensed under **CC BY-NC-SA 4.0**. The code for this project is licensed under the MIT License.
