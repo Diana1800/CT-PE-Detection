@@ -23,17 +23,22 @@ Please note that all the images used in this project are from this pre-processed
 
 Stage 1: Lung Detection Model
 
-    The first model is based on EfficientNet.
-    It classifies images into lung or non-lung.
-    Achieved an F1 score of 80% on the validation set.
-    The EfficientNet model is first trained to classify CT images as lung or non-lung.
+The first model is based on EfficientNet.
+It classifies images into lung or non-lung.
+Achieved an F1 score of 80% on the validation set.
+The EfficientNet model is first trained to classify CT images as lung or non-lung.
 
 Stage 2: Siamese Network
 
-    After selecting 20 images with the highest probability of being lung images (both from healthy and sick patients), a Siamese Network is used to compare image pairs.
-    Each branch of the Siamese Network is a custom Convolutional Network with residual connections.
-    The branches process images separately and then concatenate their features for further analysis.
-    The Siamese Network is trained to determine whether the image indicate a sick or healthy condition.
+After selecting 20 images with the highest probability of being lung images (both from healthy and sick patients), a Siamese Network is used to learn from the different image channels, each highlighting distinct features important for detecting pulmonary embolism (PE).
+
+Each channel represents a different CT scan window with unique HU normalization to emphasize specific parts of the anatomy:
+
+RED channel (LUNG window): level = -600, width = 1500
+GREEN channel (PE window): level = 100, width = 700
+BLUE channel (MEDIASTINAL window): level = 40, width = 400
+
+Each branch of the Siamese Network is a custom Convolutional Neural Network (CNN) with residual connections, designed to process these channels separately. The features from each branch are then concatenated for further analysis. The Siamese Network is trained to predict whether an individual image indicates a sick or healthy condition based on these features.
 
 ### Results 📊
 
