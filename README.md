@@ -8,7 +8,7 @@ The project consists of two key stages:
   🤖🤖🤖 Siamese Network: After selecting from each patiant CT scan the 20 images with the highest likelihood of showing lungs, these images are passed through a Siamese network to predict whether each individual image indicates if the patient is sick or healthy.
   
 
-Dataset 📂
+### Dataset 📂
 
 The CT scan images used in this project are JPEG files pre-processed with different HU normalization values for each channel. Each patient’s data includes multiple CT slices which are fed into the model.
 Kaggle Dataset
