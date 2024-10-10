@@ -6,29 +6,14 @@ The project consists of two key stages:
   Lung Detection: EfficientNet is used to classify which images show the lungs, regardless of whether the patient is diagnosed as sick. A patient can have over 40% of their images showing pulmonary embolism (PE) but still be considered healthy overall.
 
   Siamese Network: After selecting from each patiant CT scan the 20 images with the highest likelihood of showing lungs, these images are passed through a Siamese network to predict whether each individual image indicates if the patient is sick or healthy.
-
-Installation
-
-To install the necessary dependencies, run:
-
-bash
-
-pip install -r requirements.txt
-
-The project uses:
-
-    PyTorch
-    torchvision
-    Mermaid.js (for visualization of the model architecture)
-    EfficientNet
-    Siamese Networks
+  
 
 Dataset
 
 The CT scan images used in this project are JPEG files pre-processed with different HU normalization values for each channel. Each patient’s data includes multiple CT slices which are fed into the model.
 Kaggle Dataset
 
-The dataset used for this project was obtained from the Kaggle repository RSNA STR Pulmonary Embolism Detection (JPEG, 256px) created by Vaillant.
+The dataset used for this project was obtained from the Kaggle repository RSNA STR Pulmonary Embolism Detection (JPEG, 256px) modified by Ian Pan.
 
 Please note that all the images used in this project are from this pre-processed dataset. Make sure to credit the original dataset when using this data.
 Model Architecture
