@@ -85,6 +85,8 @@ Siamese Network: TBD after final training and testing.
 ### Credits 🙌
 
 The dataset used in this project is sourced from the RSNA STR Pulmonary Embolism Detection dataset. For this project, the original DICOM (DCM) files were modified and converted to JPEG format at 256x256 pixels by Ian Pan. Full credit for the original data goes to the original authors.
+
+
 https://www.kaggle.com/competitions/rsna-str-pulmonary-embolism-detection
 https://www.kaggle.com/datasets/vaillant/rsna-str-pe-detection-jpeg-256
 
