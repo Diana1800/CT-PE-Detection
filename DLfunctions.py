@@ -76,7 +76,7 @@ def plot_prob_distribution(probs, epoch):
     plt.close()
 
 
-def Train_model(model, train_loader, val_loader, criterion, optimizer, scheduler=None, num_epochs=10, device='cuda', is_binary=True, save_metric='f1', oTBLogger=None):
+def Train_model(model, train_loader, val_loader, criterion, optimizer, scheduler=None, num_epochs=10, device='cuda', is_binary=True, save_metric='f1', l1_lambda=None, oTBLogger=None):
     history = {'train_loss': [], 'val_loss': [], 'train_score': [], 'val_score': [], 'train_precision': [], 'train_recall': [], 'train_f1': [],
     'val_precision': [], 'val_recall': [], 'val_f1': [], 'epoch_time': [], 'learning_rate': [], 'last_saved_epoch': None, 'batch_learning_rate': [], 'gradient_norms': []}
     
@@ -119,6 +119,12 @@ def Train_model(model, train_loader, val_loader, criterion, optimizer, scheduler
             optimizer.zero_grad()
 
             loss = criterion(outputs, labels)  # Compute loss
+
+            # Optional L1 Regularization
+            if l1_lambda is not None and l1_lambda > 0:
+                l1_norm = sum(param.abs().sum() for param in model.parameters())
+                loss += l1_lambda * l1_norm
+
             loss.backward()  # Backward pass
             for p in model.parameters():  # Calculate gradient norm
                 if p.grad is not None:
@@ -153,7 +159,7 @@ def Train_model(model, train_loader, val_loader, criterion, optimizer, scheduler
             all_train_probs.extend(probs)
 
             # Print batch iteration info
-            print(f'\rTrain Epoch {epoch+1}/{num_epochs} - Batch {batch_idx+1}/{total_train_batches} - Loss: {loss.item():.4f} - Gradient Norm: {total_norm:.4f}', end='')
+            print(f'\rTrain Epoch {epoch+1}/{num_epochs} - Batch {batch_idx+1}/{total_train_batches} - Loss: {loss.item():.4f} | Gradient Norm: {total_norm:.4f} | Allocated: {(torch.cuda.memory_allocated() / (1024 ** 2)):.2f} MB | Reserved: {(torch.cuda.memory_reserved() / (1024 ** 2)):.2f} MB', end='')
         print('', end = '\r')
 
         train_loss = sum(train_losses) / len(train_losses)
@@ -281,7 +287,7 @@ def Train_model(model, train_loader, val_loader, criterion, optimizer, scheduler
             last_saved_epoch_f1 = epoch + 1
             history['last_saved_epoch_f1'] = last_saved_epoch_f1
 
-            save_path_f1 = f'Best_Model_F1_{epoch + 1}.pth'  # Save path for the best F1 model
+            save_path_f1 = f'Best_Model_{epoch + 1}.pth'  # Save path for the best F1 model
             save_dict_f1 = {
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
