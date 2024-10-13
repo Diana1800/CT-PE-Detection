@@ -63,7 +63,7 @@ Example output during training:
 ![output_trainFunction](https://github.com/user-attachments/assets/047f3bfb-a57f-4470-b8f6-5af36c083724)
 
 
-Comprehensive Metrics and Plots
+#### Comprehensive Metrics and Plots
 
 Tracks accuracy, precision, recall, F1-score, and loss for both training and validation.
 Saves best models based on loss and F1-score.
