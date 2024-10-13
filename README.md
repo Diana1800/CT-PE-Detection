@@ -79,7 +79,7 @@ Generates and saves:
 ### Results 📊
 
 EfficientNet: F1 score of 80% on the validation set for lung detection.
-Siamese Network: TBD after final training and testing.
+Siamese Network: F1 score of 66% on the validation set for PE dectction from one image.
 
 
 ### Credits 🙌
