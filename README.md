@@ -73,6 +73,8 @@ Generates and saves:
 - Loss curves for train/validation phases.
 - Distribution of predicted probabilities.
 
+![plots](https://github.com/user-attachments/assets/dd155952-fb62-40e1-bde8-5c5644319142)
+
         
 ### Results 📊
 
