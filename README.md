@@ -44,19 +44,19 @@ Each branch of the Siamese Network is a custom Convolutional Neural Network (CNN
 
 The project includes a robust training loop with several advanced features to ensure smooth and efficient training. The core aspects include:
 
-Learning Rate Scheduler
+- Learning Rate Scheduler
 Dynamic learning rate adjustments using PyTorch schedulers, such as OneCycleLR.
 Learning rate trends are tracked for better understanding and troubleshooting.
 
-Gradient Norm Monitoring
+- Gradient Norm Monitoring
 Monitors the L2 norm of gradients to detect potential exploding or vanishing gradients.
 Plots gradient norms throughout training for improved transparency.
 
-Optional L1 Regularization
+- Optional L1 Regularization
 Adds L1 regularization to reduce overfitting by penalizing large weights.
 Controlled by a hyperparameter l1_lambda and can be toggled as needed.
 
-GPU Memory Usage Tracking
+- GPU Memory Usage Tracking
 Displays allocated and reserved GPU memory for every batch, helping to manage memory efficiently.
 Example output during training:
         
@@ -65,8 +65,8 @@ Example output during training:
 
 #### Comprehensive Metrics and Plots
 
-Tracks accuracy, precision, recall, F1-score, and loss for both training and validation.
-Saves best models based on loss and F1-score.
+- Tracks accuracy, precision, recall, F1-score, and loss for both training and validation.
+- Saves best models based on loss and F1-score.
 Generates and saves:
 - Gradient and learning rate trends.
 - Confusion matrices for each epoch.
