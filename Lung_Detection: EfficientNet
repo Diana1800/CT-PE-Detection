@@ -318,15 +318,6 @@ def unfreeze_all_layers(model):
     for param in model.parameters():
         param.requires_grad = True
 
-
-
-
-#Score function 
-def Score(mScore: np.ndarray, vY: np.ndarray ) -> np.float64:    
-    preds = mScore >= 0.5
-    valAcc = (preds.eq(vY).sum())/len(vY)
-    return valAcc
-
 #Loss function 
 hL=nn.BCEWithLogitsLoss()
 hL=hL.to(TORCH_DEVICE)
