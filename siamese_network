@@ -584,16 +584,6 @@ train_images = (train_images[0], train_images[1], train_images[2])
 torchinfo.summary(oModel, input_data=train_images, device=TORCH_DEVICE)
     
 
-#Score function 
-
-def Score(mScore: np.ndarray, vY: np.ndarray ) -> np.float64:
-    
-    preds = mScore >= 0.5
-    valAcc = (preds.eq(vY).sum())/len(vY)
-
-    return valAcc
-
-
 #Loss function 
 # Fix unbalance images
 # Compute with function: compute_class_weight
