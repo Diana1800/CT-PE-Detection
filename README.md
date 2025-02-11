@@ -79,7 +79,7 @@ Generates and saves:
 ### Results 📊
 
 EfficientNet: F1 score of 80% on the validation set for lung detection.
-Siamese Network: F1 score of 66% on the validation set for PE dectction from one image.
+Siamese Network: Achieved an F1 score of 66% on the validation set for PE detection from a single CT image rather than the full scan. Since PE detection typically requires analyzing the entire CT scan, this score demonstrates the feasibility of detecting signals from limited information.
 
 
 ### Credits 🙌
